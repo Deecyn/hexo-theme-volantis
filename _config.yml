@@ -328,21 +328,23 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      avatar: https://deecyn.com/img/logo/avatar.png
       shape: rectangle # circle, rectangle
-      url: /about/
-      title:
+      url: /about
+      title: Deecyn‘s Blog
       subtitle:
-      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
-        - icon: fas fa-rss
-          url: /atom.xml
-        - icon: fas fa-envelope
-          url: mailto:me@xxx.com
+        - icon: fas fa-blog
+          url: https://deecyn.com/
         - icon: fab fa-github
-          url: https://github.com/volantis-x/
-        - icon: fas fa-headphones-alt
-          url: /
+          url: https://github.com/Deecyn
+        - icon: fab fa-cuttlefish
+          url: https://blog.csdn.net/Deecyn
+        - icon: fas fa-check-double # https://deecyn.com/img/logo/juejin.png #  
+          url: https://juejin.im/user/5bc313c3e51d450e7633599e
+        - icon: fas fa-envelope
+          url: mailto:deecyns@gmail.com
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:
