@@ -2,14 +2,14 @@
 # use_cdn: /source/js/* 中的JS文件(JS Only)使用jsdelivr的min版本加速
 # 默认使用 https://cdn.jsdelivr.net/npm/hexo-theme-volantis@<%- theme.info.theme_version %>/source/js/*.min.js 的CDN压缩版本(min.js)，注意版本号对应关系！！可以通过修改以下配置项覆盖
 # 开发者注意 use_cdn 设置为 false
-use_cdn: false
+use_cdn: true
 info:
   theme_name: Volantis # This is theme's name.
   theme_version: '4.3.1' # This is theme's version.
   theme_docs: https://volantis.js.org/ # This is theme's URL.
   theme_repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
-    js: # https://cdn.jsdelivr.net/npm/hexo-theme-volantis@<%- theme.info.theme_version %>/source/js/app.min.js # 注意版本!!!
+    js:  https://cdn.jsdelivr.net/npm/hexo-theme-volantis@<%- theme.info.theme_version %>/source/js/app.min.js # 注意版本!!!
     css:
       first: # /css/first.css (需自行替换CDN 首屏样式 cover navbar search )
       style: # /css/style.css (需自行替换CDN 异步加载 Others...           )
@@ -20,71 +20,90 @@ info:
 navbar:
   visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    icon:
-    title:
+    img: https://deecyn.com/img/logo/avatar.png
+    icon: https://deecyn.com/img/logo/letter_D.jpg
+    title: 
   menu:
-    - name: 博客
-      icon: fas fa-rss
+    - name: 首页
+      icon: fas fa-home
       url: /
-    - name: 分类
-      icon: fas fa-folder-open
-      url: categories/
-    - name: 标签
-      icon: fas fa-tags
-      url: tags/
+    # - name: 分类
+    #   icon: fas fa-folder-open
+    #   url: categories/
     - name: 归档
       icon: fas fa-archive
       url: archives/
-    - name: 友链
-      icon: fas fa-link
-      url: friends/
-    - name: 关于
-      icon: fas fa-info-circle
-      url: about/
-  search: Search...   # Search bar placeholder
+    - name: 标签
+      icon: fas fa-tags
+      url: tags/
+    # - name: 专栏
+    #   icon: fas fa-columns
+    #   rows:
+    #     - name: 博客文档
+    #       url: blog-docs/overview/
+    #     - name: Java专栏
+    #       url: java-column/overviews
+    #     - name: MySQL专栏
+    #       url: mysql-column/overview
+    - name: 更多
+      icon: fas fa-ellipsis-v
+      rows:
+        - name: 友链
+          # icon: fas fa-link
+          url: friends/
+        # - name: hr
+        - name: 关于
+          # icon: fas fa-info-circle
+          url: about/
+        - name: 知识体系
+          url: bok/overview
+  search: Search for...   # Search bar placeholder
+
 ############################### Navigation Bar ############################### > end
 
 
 ############################### Cover ############################### > start
 cover:
-  height_scheme: full # full, half
-  layout_scheme: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  height_scheme: half # full, half
+  layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
-  # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
+  #background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
+  #background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: 'Volantis'
-  subtitle: ''
-  search: A Wonderful Theme for Hexo # search bar placeholder
+  title: Deecyn's Blog
+  subtitle: 'Hello, welcome.'
+  search: Search for... # search bar placeholder
   features:
-    - name: 文档
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
-      url: /v4/getting-started/
-    - name: 帮助
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
-      url: faqs/
-    - name: 示例
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: /examples/
-    - name: 社区
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
-      url: /contributors/
-    - name: 博客
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
-      url: /archives/
-    - name: 源码
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: https://github.com/volantis-x/hexo-theme-volantis/
+    - name: 首页
+      icon: fas fa-home
+      url: /
+    - name: 归档
+      icon: fas fa-archive
+      url: archives/
+    # - name: 分类
+    #   icon: fas fa-folder-open
+    #   url: categories/
+    - name: 标签
+      icon: fas fa-tags
+      url: tags/
+    # - name: 专栏
+    #   icon: fas fa-columns
+    #   url: /blog-columns.html
+    #   rows:
+    #     - name: 博客文档
+    #       url: blog-docs/overview/
+    #     - name: Java专栏
+    #       url: java-column/overview
+    #     - name: MySQL专栏
+    #       url: mysql-column/overview
+    - name: 关于
+      icon: fas fa-user-edit
+      url: about/
+      target: _blank
+
 ############################### Cover ############################### > end
 
 pages:
@@ -114,7 +133,7 @@ article:
   body:
     # 文章顶部信息
     # 从 meta_library 中取
-    top_meta: [author, category, date, counter] #启用评论数量需在此添加
+    top_meta: [category, date, wordcount] #启用评论数量需在此添加
     # ----------------
     # 文章页脚组件
     footer_widget:
@@ -144,8 +163,10 @@ article:
         enable: true
         permalink: '本文永久链接是：'
         content:
-          - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
           - permalink
+          - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
+          - '欢迎到 [留言板](https://deecyn.com/valine-message-board.html) 或者 [GitHub Issues](https://github.com/Deecyn/message-board/issues) 中进行留言或反馈~'
+      
       # ----------------
       # 打赏组件 (for layout: post)
       donate:
@@ -155,19 +176,19 @@ article:
           - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
     # 文章底部信息
     # 从 meta_library 中取
-    bottom_meta: [updated, tags, share]
+    bottom_meta: [updated, tags]
     # meta library
     meta_library:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar:
-        name: 请设置文章作者
-        url: /
+        avatar: https://deecyn.com/img/logo/avatar.png
+        name: Deecyn
+        url: https://deecyn.com
       # 文章创建日期
       date:
         icon: fas fa-calendar-alt
-        title: '发布于：'
+        title: ''
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章更新日期
       updated:
@@ -194,7 +215,7 @@ article:
         icon_duration: fas fa-hourglass-half
       # 文章标签
       tags:
-        icon: fas fa-hashtag
+        icon: fas fa-tag
       # 分享
       share:
         - id: qq
@@ -214,7 +235,7 @@ article:
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
-  service: valine # valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
+  service: gitalk # valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
   # Valine
   # https://valine.js.org/
   valine:
@@ -332,19 +353,27 @@ sidebar:
       shape: rectangle # circle, rectangle
       url: /about
       title: Deecyn‘s Blog
-      subtitle:
+      subtitle: 我拿时间换了什么？
       jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
-        - icon: fas fa-blog
-          url: https://deecyn.com/
-        - icon: fab fa-github
+        # - icon: fas fa-blog
+        #   url: https://deecyn.com/
+        # - icon: fab fa-github
+        #   url: https://github.com/Deecyn
+        # - icon: fab fa-cuttlefish
+        #   url: https://blog.csdn.net/Deecyn
+        # - img: https://deecyn.com/img/logo/zhihu.ico #  
+        #   url: https://juejin.im/user/5bc313c3e51d450e7633599e
+        # - icon: fas fa-envelope
+        #   url: mailto:deecyns@gmail.com
+        - img: https://deecyn.com/img/logo/github-svg.jpg
           url: https://github.com/Deecyn
-        - icon: fab fa-cuttlefish
-          url: https://blog.csdn.net/Deecyn
-        - icon: fas fa-check-double # https://deecyn.com/img/logo/juejin.png #  
-          url: https://juejin.im/user/5bc313c3e51d450e7633599e
-        - icon: fas fa-envelope
+        - img: https://deecyn.com/img/logo/gmail.png
           url: mailto:deecyns@gmail.com
+        - img: http://localhost:4000/img/logo/zhihu.png
+          url: https://www.zhihu.com/people/deecyn
+        - img: http://localhost:4000/img/logo/juejin.svg
+          url: https://juejin.im/user/3491704661083453
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:
@@ -364,7 +393,7 @@ sidebar:
       header:
         icon: fas fa-folder-open
         title: 文章分类
-        url: /blog/categories/
+        url: /categories/
     # ---------------------------------------
     # tagcloud widget
     tagcloud:
@@ -373,9 +402,9 @@ sidebar:
       header:
         icon: fas fa-tags
         title: 热门标签
-        url: /blog/tags/
+        url: /tags/
       min_font: 14
-      max_font: 24
+      max_font: 22
       color: true
       start_color: '#999'
       end_color: '#555'
@@ -426,6 +455,25 @@ sidebar:
           friendlyShow: true    # 更友好的时间显示
           text: '最后活动时间：'
           unit: '日'
+    bok:
+      class: group
+      display: [desktop, mobile] # [desktop, mobile]
+      header:
+        icon: fas fa-list-alt
+        title: 知识体系
+    news:
+      class: list
+      display: [desktop, mobile] # [desktop, mobile]
+      header:
+        icon: fas fa-exclamation-triangle
+        title: 公告板
+      rows:
+        - name: 博客文档 测试阶段 ！
+          icon: fas fa-info-circle
+          url: bok/overview/
+
+
+
 ############################### Sidebar ############################### > end
 
 
@@ -450,24 +498,30 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, social, license, analytics, info, copyright]
+  layout: [social, license, analytics, info, copyright]
   social:
     - icon: #fas fa-rss
       url:
     # or
-    - img:
-      url:
+    - img: https://deecyn.com/img/logo/github-svg.jpg
+      url: https://github.com/Deecyn
+    - img: https://deecyn.com/img/logo/gmail.png
+      url: mailto:deecyns@gmail.com
+    - img: http://localhost:4000/img/logo/zhihu.png
+      url: https://www.zhihu.com/people/deecyn
+    - img: http://localhost:4000/img/logo/juejin.svg
+      url: https://juejin.im/user/3491704661083453
     # or
     - avatar:
       url:
   # site source
   source: https://github.com/volantis-x/volantis-docs/
   # analytics using leancloud
-  analytics: >
-    <span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
-    <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
+  # analytics: >
+  #   <span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
+  #   <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # site copyright
-  copyright: '[Copyright © 2017-2020 XXX](/)'
+  copyright: '[Copyright ©2019-2021 Deecyn](https://Deecyn.com) ·[渝ICP备18011391号-3](http://www.beian.miit.gov.cn/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 ############################### Site Footer ############################### > end
@@ -526,7 +580,7 @@ plugins:
 
   # npm i hexo-wordcount
   wordcount:
-    enable: #true
+    enable: true
 
   ######## Plugins for ...
   # Button Ripple Effect
@@ -547,34 +601,38 @@ plugins:
 
   # Slide Background
   backstretch:
-    enable: #true
+    enable: true
     js: https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js
-    position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
+    position: fixed       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg
+      - https://deecyn.com/img/bg/todd-diemer.jpg
+      - https://deecyn.com/img/bg/wolfgang-hasselmann.jpg
+      - https://deecyn.com/img/bg/sky-mountains.jpeg
+      - https://deecyn.com/img/bg/sunset.jpeg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg
+      # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg
 
   # APlayer is only available in mainland China.
   # APlayer config: https://github.com/metowolf/MetingJS
@@ -837,16 +895,16 @@ custom_css:
     zoom-in: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-in.png
     grab: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/openhand.png
   font_smoothing: true # font-smoothing for webkit
-  max_width: 1080px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
+  max_width: 1200px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
   scrollbar:
     size: 4px
     border: 2px
   navbar:
-    height: 64px
+    height: 54px
     width: auto # auto, max
     effect: [shadow, blur] # [shadow, floatable, blur]
   sidebar:
-    effect: [shadow] # [shadow, floatable, blur]
+    effect: [shadow, floatable] # [shadow, floatable, blur]
   body:
     effect: [shadow] # [shadow, floatable, blur]
     highlight:
@@ -854,13 +912,13 @@ custom_css:
       copy_btn: true
       grayscale: false # Enable grayscale effect
     text_align: # left, right, justify, center
-      h1: left
+      h1: center
       h2: left
       h3: left
       h4: left
       p: justify
   gap:
-    h2: 48px # Spacing above H2 (only px unit)
+    h2: 32px # Spacing above H2 (only px unit)
     h3: 24px # Spacing above H3 (only px unit)
     h4: 16px # Spacing above H4 (only px unit)
     p: 1em # Paragraph spacing between paragraphs
@@ -872,11 +930,11 @@ custom_css:
     button: 4px
   fontsize:
     root: 16px
-    h1: 1.5rem # 不推荐用在文章中
-    h2: 1.5rem
-    h3: 1.25rem
-    h4: 1.125rem
-    h5: 1rem
+    h1: 1.875rem # 不推荐用在文章中
+    h2: 1.625rem
+    h3: 1.475rem
+    h4: 1.35rem
+    h5: 1.125rem
     h6: 1rem
     list: .9375rem
     meta: .875rem
@@ -921,9 +979,9 @@ seo:
   use_excerpt_as_description: true
   robots:
     home_first_page: index,follow
-    home_other_pages: noindex,follow
+    home_other_pages: index,follow
     archive: noindex,follow
     category: noindex,follow
-    tag: noindex,follow
+    tag: index,follow
     # robots can be written in front-matter
 ############################### SEO ############################### > end
